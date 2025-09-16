@@ -145,8 +145,11 @@
     }
   }
   @media(max-width: $xxl){
-    padding: 0;
+    padding: 26px 0;
     gap: 10px;
+  }
+  @media(max-width: $m){
+    padding: 16px 0;
   }
 }
 .tabcontent{

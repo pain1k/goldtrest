@@ -37,6 +37,25 @@ $(document).ready(function () {
     $('.header').toggleClass('opened');
     $('html').toggleClass('no-scroll');
   })
+
+  $('.header .menu__link').on('click', function() {
+    close()
+  });
+  function close(){
+    $('.burger').removeClass('opened');
+    $('.header').removeClass('opened');
+    $('html').removeClass('no-scroll');
+  }
+
+  function closeMobileHeader(val){
+    if (val > 1200){
+      close();
+    }
+  }
+
+  $( window ).resize(function() {
+    closeMobileHeader($(window).width())
+  });
   Fancybox.bind("[data-fancybox]");
 
   const $tablinks = $('.tablinks a');
@@ -202,7 +221,6 @@ $(document).ready(function () {
   var text = $('.hero__title .typing').text().trim();
 
   var newText = text.split('').map(letter => '<span>' + letter + '</span>').join('');
-  console.log(newText)
   $('.hero__title .typing').html(newText);
   setTimeout(() => {
     $('.hero__title .typing span').each(function (index) {
@@ -218,4 +236,15 @@ $(document).ready(function () {
       }, 100 * index)
     })
   }, 1000)
+
+  $(document).on('aboutTypeEnd', function () {
+    setTimeout(() => {
+      $('.hero__title .hidden').removeClass('hidden');
+    }, 200)
+
+    setTimeout(() => {
+      $('.hero__list').removeClass('hidden');
+    }, 700)
+
+  })
 });
