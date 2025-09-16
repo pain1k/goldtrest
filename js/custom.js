@@ -51,20 +51,34 @@ $(document).ready(function () {
   }
 
   if($('.number__num').length>0){
-    $(".number__num").each(function () {
-      let $this = $(this),
-          num = parseInt($this.data("num")),
-          duration = parseInt($this.data("duration")) || 2000;
+    function animateNumber($el) {
+      let num = parseInt($el.data("num")),
+          duration = parseInt($el.data("duration")) || 2000;
+
       $({count: 0}).animate({count: num}, {
         duration: duration,
         easing: "swing",
         step: function (now) {
-          $this.find("b").text(Math.floor(now));
+          $el.find("b").text(Math.floor(now));
         },
         complete: function () {
-          $this.find("b").text(num);
+          $el.find("b").text(num);
         }
       });
+    }
+
+    let observer = new IntersectionObserver(function (entries, obs) {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          let $target = $(entry.target);
+          animateNumber($target);
+          obs.unobserve(entry.target);
+        }
+      });
+    }, {threshold: 0.5});
+
+    $(".number__num").each(function () {
+      observer.observe(this);
     });
   }
 
