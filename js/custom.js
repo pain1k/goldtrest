@@ -1,5 +1,5 @@
 $(document).ready(function () {
-  $('.services-item__btn').on('click', function(){
+  $('.services-item__right-top').on('click', function(){
 
     const $this = $(this).closest('.services-item');
     const $img = $this.find('.services-item__img');
@@ -32,6 +32,42 @@ $(document).ready(function () {
     }
 
   })
+  $('.services-item__right-top').first().trigger('click');
+
+  if($('.technology-list').length>0){
+    const $list = $('.technology-list');
+    const $items = $('.technology-item');
+    const $firstItem = $items.first();
+
+    $items.on('mouseenter', function () {
+      $items.removeClass('active');
+      $(this).addClass('active');
+    });
+
+    $list.on('mouseleave', function () {
+      $items.removeClass('active');
+      $firstItem.addClass('active');
+    });
+  }
+
+  if($('.number__num').length>0){
+    $(".number__num").each(function () {
+      let $this = $(this),
+          num = parseInt($this.data("num")),
+          duration = parseInt($this.data("duration")) || 2000;
+      $({count: 0}).animate({count: num}, {
+        duration: duration,
+        easing: "swing",
+        step: function (now) {
+          $this.find("b").text(Math.floor(now));
+        },
+        complete: function () {
+          $this.find("b").text(num);
+        }
+      });
+    });
+  }
+
   $('.burger').on('click', function(){
     $(this).toggleClass('opened');
     $('.header').toggleClass('opened');
@@ -173,7 +209,12 @@ $(document).ready(function () {
     }, 200)
 
     setTimeout(() => {
-      $('.hero__list').removeClass('hidden');
+      $('.hero__item').each(function (index) {
+        var t = $(this);
+        setTimeout(() => {
+          t.removeClass('hidden');
+        }, 200 * index)
+      })
     }, 700)
 
   })

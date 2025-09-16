@@ -42,13 +42,13 @@
     align-items: center;
     justify-content: space-between;
     gap: 20px;
-    transition: .3s all;
   }
   &__item{
     padding: 24px 31px;
     background-color: rgba(0,0,0,.3);
     border: 1px solid rgba(255,255,255,.4);
     @include fz30();
+    transition: .3s all;
   }
   @media(max-width: $xl){
     min-height: unset;

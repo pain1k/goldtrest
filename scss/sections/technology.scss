@@ -142,8 +142,18 @@
       margin-top: 40px;
     }
     &-item{
+      &:hover,
+      &.active{
+        &:before{
+          background: linear-gradient(180deg, rgba(1, 1, 0, 0) 0, #010100 100%);
+        }
+      }
       &:after{
         display: none;
+      }
+      &:before{
+        background: linear-gradient(180deg, rgba(1, 1, 0, 0) 0, #010100 100%);
+        top: 60%;
       }
       &__number{
         font-size: 60px;
@@ -156,6 +166,9 @@
       }
       &__content{
         gap: 10px;
+      }
+      &__desc{
+        opacity: 1;
       }
     }
   }
