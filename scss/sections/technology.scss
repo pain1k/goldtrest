@@ -167,17 +167,3 @@
     }
   }
 }
-
-.hero__title > .typing > span {
-  color: transparent;
-}
-.hero__title > .typing > .show {
-  color: #ffffff;
-  filter: blur(30px);
-}
-.hero__title > .typing > .unblur {
-  filter: none;
-}
-.hero__title > .typing {
-  position: relative;
-}

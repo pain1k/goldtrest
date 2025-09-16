@@ -5,7 +5,6 @@
   padding-bottom: 108px;
   background-size: cover;
   background-position: center;
-  background-image: url('../../img/hero.png');
   color: $white;
   &__desc{
     opacity: .5;
@@ -20,6 +19,19 @@
     @include h1();
     span{
       color: $yellow;
+    }
+    &> .typing {
+      position: relative;
+      > span {
+        color: transparent;
+      }
+      > .show {
+        color: #ffffff;
+        filter: blur(30px);
+      }
+      > .unblur {
+        filter: none;
+      }
     }
   }
   &__list{

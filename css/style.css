@@ -591,7 +591,6 @@ section:not(:first-of-type) {
   padding-bottom: 108px;
   background-size: cover;
   background-position: center;
-  background-image: url("../../img/hero.png");
   color: #ffffff;
 }
 .hero__desc {
@@ -646,6 +645,19 @@ section:not(:first-of-type) {
 }
 .hero__title span {
   color: #DFA000;
+}
+.hero__title > .typing {
+  position: relative;
+}
+.hero__title > .typing > span {
+  color: transparent;
+}
+.hero__title > .typing > .show {
+  color: #ffffff;
+  filter: blur(30px);
+}
+.hero__title > .typing > .unblur {
+  filter: none;
 }
 .hero__list {
   margin-top: 215px;
@@ -1210,23 +1222,6 @@ section:not(:first-of-type) {
   .technology .top-section__subtitle {
     text-indent: 0;
   }
-}
-
-.hero__title > .typing > span {
-  color: transparent;
-}
-
-.hero__title > .typing > .show {
-  color: #ffffff;
-  filter: blur(30px);
-}
-
-.hero__title > .typing > .unblur {
-  filter: none;
-}
-
-.hero__title > .typing {
-  position: relative;
 }
 
 .gallery__inner {
