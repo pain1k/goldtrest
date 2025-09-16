@@ -1,0 +1,111 @@
+.header {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 11;
+  color: $white;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  border-bottom: 1px solid rgba(255,2155,255, .2);
+  &__inner{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .logo{
+    padding-right: 20px;
+    position: relative;
+    &::after{
+      position: absolute;
+      top: -20px;
+      bottom: -20px;
+      content: '';
+      width: 1px;
+      right: 0;
+      background-color: rgba(255,2155,255, .2);
+    }
+  }
+  .links{
+    padding-left: 20px;
+    position: relative;
+    &::after{
+      position: absolute;
+      top: -25px;
+      bottom: -25px;
+      content: '';
+      width: 1px;
+      left: 0;
+      background-color: rgba(255,2155,255, .2);
+    }
+  }
+  .menu{
+    gap: 76px;
+  }
+  @media(max-width: $xxl){
+    .menu{
+      gap: 20px;
+    }
+  }
+  @media(max-width: $xl){
+    &__inner{
+      justify-content: flex-start;
+    }
+    .mob-menu{
+      display: none;
+    }
+    &.opened{
+        .mob-menu{
+          position: absolute;
+          top: 100%;
+          left: 0;
+          width: 100vw;
+          background-color: #181b1d;
+          padding: 20px;
+          display: block;
+        }
+        .menu{
+          display: flex;
+          flex-direction: column;
+          padding: 20px 0;
+          gap: 10px;
+      }
+    }
+    .links{
+      padding-left: 0;
+      margin-inline: auto;
+      &:after{
+        display: none;
+      }
+    }
+  }
+  @media(max-width: $m){
+    background-color: #181b1d;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    .logo{
+      padding-right: 0;
+      &::after{
+        display: none;
+      }
+    }
+    &__logo{
+      img{
+        height: 40px;
+      }
+    }
+    .link{
+      &-tel{
+        font-size: 18px;
+        line-height: 18px;
+      }
+      &-mail{
+        font-size: 14px;
+        line-height: 14px;
+      }
+    }
+  }
+  @media(max-width: $s){
+
+  }
+}

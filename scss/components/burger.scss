@@ -1,0 +1,63 @@
+.burger {
+    background: hsla(0,0%,100%,.16);
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+    height: 40px;
+    min-width: 40px;
+    outline: none;
+    position: relative;
+    width: 40px;
+    display: none;
+    span {
+    background-color: #fff;
+    border-radius: 1.5px;
+    content: "";
+    height: 2px;
+    position: absolute;
+    right: 10px;
+    -webkit-transition: all .3s;
+    transition: all .3s;
+    width: 20px;
+      &:first-child {
+        top: 14px
+      }
+      &:nth-child(2) {
+        top: 20px
+      }
+      &:last-child {
+        top: 27px
+      }
+  }
+  .opened {
+    background-color: hsla(0,0%,100%,.16)
+  }
+
+@media(max-width: $xl){
+  margin-left: auto;
+  display: inline-flex;
+  &.opened {
+    span {
+        height: 1px;
+        right: 13px;
+        top: 50%;
+        &:first-child {
+          -webkit-transform: rotate(45deg);
+          -ms-transform: rotate(45deg);
+          transform: rotate(45deg);
+          width: 13px;
+        }
+        &:nth-child(2) {
+          -webkit-transform: rotate(-45deg);
+          -ms-transform: rotate(-45deg);
+          transform: rotate(-45deg);
+          width: 13px;
+        }
+        &:last-child {
+          display: none
+        }
+      }
+  }
+}
+
+}

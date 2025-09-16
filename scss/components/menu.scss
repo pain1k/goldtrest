@@ -1,0 +1,25 @@
+.menu{
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+  &__link{
+    font-size: 16px;
+    line-height: 20px;
+    font-weight: 700;
+    white-space: nowrap;
+    letter-spacing: .8px;
+    text-transform: uppercase;
+    &:hover,
+    &:active{
+      opacity: .6;
+    }
+  }
+  .menu{
+    gap: 76px;
+  }
+  @media(max-width: $xxl){
+    justify-content: flex-start;
+    gap: 10px;
+    flex-wrap: wrap;
+  }
+}

@@ -1,0 +1,97 @@
+.contacts{
+  border-top: 1px solid rgba(0,0,0,.2);
+  .half{
+    border-left: 1px solid rgba(0,0,0,.2);
+    &+.half{
+      border-right: 1px solid rgba(0,0,0,.2);
+    }
+  }
+  &-detail{
+    border-top: 1px solid rgba(0,0,0,.2);
+    .half{
+      &:first-of-type{
+        padding: 0;
+      }
+      &+.half{
+        border-right: 1px solid rgba(0,0,0,.2);
+      }
+    }
+  }
+  &-link {
+    font-weight: 700;
+    font-size: 58px;
+    line-height: 80%;
+    letter-spacing: -5.8px;
+    transition: .3s all;
+    &:hover,
+    &:active{
+      opacity: .6;
+    }
+  }
+  &__socials{
+    display: flex;
+    align-items: center;
+    gap: 30px;
+  }
+  &-mail{
+    font-weight: 700;
+    font-size: 154px;
+    line-height: 139px;
+    letter-spacing: -6.16px;
+    margin-bottom: 49px;
+    display: inline-flex;
+    span{
+      color: $yellow;
+    }
+  }
+  @media(max-width: 1717px){
+    &-mail{
+      font-size: 130px;
+      width: 100%;
+      justify-content: center;
+    }
+  }
+  @media(max-width: $xxl){
+    &-mail{
+      font-size: 100px;
+      line-height: 100px;
+      margin-bottom: 30px;
+    }
+  }
+  @media(max-width: $xl){
+    &-mail{
+      font-size: 90px;
+      line-height: 90px;
+    }
+  }
+  @media(max-width: $l){
+    &-mail{
+      font-size: 70px;
+      line-height: 70px;
+    }
+    &-link{
+      font-size: 30px;
+      line-height: 30px;
+      letter-spacing: 0px;
+    }
+  }
+  @media(max-width: $m){
+    &-mail{
+      font-size: 48px;
+      line-height: 48px;
+      letter-spacing: 0;
+    }
+  }
+  @media(max-width: $s){
+    &-mail{
+      font-size: 33px;
+      line-height: 33px;
+    }
+  }
+  @media(max-width: 400px){
+    &-mail{
+      font-size: 28px;
+      line-height: 28px;
+    }
+  }
+}

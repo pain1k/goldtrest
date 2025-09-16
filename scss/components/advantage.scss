@@ -1,0 +1,55 @@
+.advantages{
+  display: flex;
+  @media(max-width: $l){
+    flex-wrap: wrap;
+  }
+}
+.advantage{
+  border-bottom: 1px solid rgba(0,0,0,.2);
+  border-right: 1px solid rgba(0,0,0,.2);
+  padding-bottom: 29px;
+  padding-right: 5px;
+  &:not(:first-of-type){
+    padding-left: 24px;
+  }
+  &__title{
+    @include fz20();
+    margin-top: 20px;
+    font-weight: 700;
+  }
+  svg{
+    flex-shrink: 0;
+  }
+  @media(max-width: $l){
+    width: 100%;
+    max-width: 50%;
+    border-top: 1px solid rgba(0,0,0,.2);
+    padding-left: 16px;
+    &:not(:first-of-type){
+      padding-left: 16px;
+    }
+    &:first-of-type,
+    &:nth-of-type(2){
+      border-bottom: 0;
+    }
+  }
+  @media(max-width: $m){
+
+  }
+  @media(max-width: $s){
+    max-width: 100%;
+    padding-left: 0;
+    padding-top: 30px;
+    border-bottom: 1px solid rgba(0,0,0,.2);
+    border-top: 0;
+    display: flex;
+    gap: 20px;
+    &:first-of-type,
+    &:nth-of-type(2){
+      border-bottom: 1px solid rgba(0,0,0,.2);
+    }
+    &:not(:first-of-type){
+      padding-left: 0;
+    }
+  }
+}

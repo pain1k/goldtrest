@@ -1,0 +1,61 @@
+.hero{
+  min-height: 980px;
+  padding-top: 218px;
+  padding-top: 148px;
+  padding-bottom: 108px;
+  background-size: cover;
+  background-position: center;
+  background-image: url('../../img/hero.png');
+  color: $white;
+  &__desc{
+    opacity: .5;
+    max-width: 470px;
+    text-align: center;
+    @include fz18();
+    margin-inline: auto;
+  }
+  &__title{
+    margin-top: 115px;
+    text-align: center;
+    @include h1();
+    span{
+      color: $yellow;
+    }
+  }
+  &__list{
+    margin-top: 215px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+  }
+  &__item{
+    padding: 24px 31px;
+    background-color: rgba(0,0,0,.3);
+    border: 1px solid rgba(255,255,255,.4);
+    @include fz30();
+  }
+  @media(max-width: $xl){
+    min-height: unset;
+    padding-top: 180px;
+    padding-bottom: 50px;
+    &__list{
+      flex-wrap: wrap;
+      justify-content: center;
+      margin-top: 105px;
+    }
+  }
+  @media(max-width: $m){
+    padding-top: 80px;
+    &__list{
+      margin-top: 55px;
+      gap: 10px;
+    }
+    &__item{
+      padding: 14px;
+    }
+    &__title{
+      margin-top: 55px;
+    }
+  }
+}

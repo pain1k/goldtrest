@@ -1,0 +1,247 @@
+.gallery{
+  &__inner{
+    margin-top: 80px;
+  }
+  &-slider{
+    border: 1px solid rgba(0,0,0,.2);
+    .swiper-wrapper{
+      padding: 100px 0;
+    }
+  }
+  &-slide{
+    padding: 24px;
+    position: relative;
+    img{
+      position: absolute;
+      inset: 0;
+    }
+    &__info{
+      position: absolute;
+      left: 24px;
+      bottom: 24px;
+      right: 24px;
+      display: flex;
+      align-items: flex-end;
+      justify-content: space-between;
+      gap: 50px;
+      color: $white;
+      opacity: 0;
+      z-index: 3;
+    }
+    &__title{
+      font-weight: 700;
+      font-size: 8px;
+      line-height: 8px;
+      letter-spacing: -.36px;
+    }
+    &__duration{
+      display: inline-flex;
+      gap: 10px;
+      font-weight: 400;
+      font-size: 8px;
+      line-height: 8px;
+      letter-spacing: -.32px;
+      white-space: nowrap;
+      span{
+        font-weight: 700;
+        font-size: 8px;
+        line-height: 8px;
+        letter-spacing: -.36px;
+      }
+    }
+    &.swiper-slide-active{
+      &:after{
+        content: '';
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        height: 130px;
+        z-index: 2;
+        background: linear-gradient(180deg, rgba(1, 1, 0, 0) 22.56%, #010100 100%);
+      }
+      .gallery-slide__info{
+        opacity: 1;
+      }
+    }
+  }
+  @media(max-width: $xl){
+    &-slide{
+      &__info{
+        gap: 10px;
+      }
+    }
+  }
+  @media(max-width: $l){
+    &-slider{
+      .swiper-wrapper{
+        padding: 0;
+      }
+    }
+    &-slide{
+      &__title{
+        font-size: 16px;
+        line-height: 16px;
+      }
+      &__duration{
+        font-size: 16px;
+        line-height: 16px;
+        span{
+          font-size: 16px;
+          line-height: 16px;
+        }
+      }
+      &.swiper-slide-active{
+        &:after{
+          height: 200px;
+        }
+      }
+    }
+  }
+  @media(max-width: $m){
+    &-slide{
+      &__info{
+        flex-wrap: wrap;
+      }
+    }
+    &__inner{
+      margin-top: 40px;
+    }
+  }
+}
+.tablinks{
+  display: flex;
+  justify-content: space-between;
+  gap: 48px;
+  padding: 26px 5%;
+  scrollbar-width: none;
+  overflow-x: auto;
+  border: 1px solid rgba(0,0,0,.2);
+  border-bottom: none;
+  &::-webkit-scrollbar {
+    display: none;
+    width: 0;
+    height: 0;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background-color: transparent;
+  }
+
+  &::-webkit-scrollbar-track {
+    background-color: transparent;
+  }
+
+  a{
+    opacity: .4;
+    font-weight: 700;
+    font-size: 25px;
+    line-height: 28px;
+    letter-spacing: 0px;
+    cursor: pointer;
+    white-space: nowrap;
+    &.active{
+      opacity: 1;
+    }
+  }
+  @media(max-width: $xxl){
+    padding: 0;
+    gap: 10px;
+  }
+}
+.tabcontent{
+  display: none;
+  &.show{
+    display: block;
+  }
+  .swiper{
+    &-controls{
+      display: flex;
+      align-items: center;
+      margin-top: 52px;
+      border-top: 1px solid rgba(0,0,0,.2);
+    }
+    &-btn{
+      width: 100%;
+      max-width: 25.35%;
+      font-weight: 700;
+      font-size: 16px;
+      line-height: 18px;
+      letter-spacing: 0px;
+      text-transform: uppercase;
+      transition: .3s all;
+      background-color: transparent;
+      cursor: pointer;
+      color: $black;
+      display: flex;
+      align-items: center;
+      gap: 24px;
+      justify-content: center;
+      height: 80px;
+      svg{
+        transition: .3s all;
+      }
+      &:hover,
+      &:active{
+        background-color: $black;
+        color: $white;
+        svg{
+          path{
+            fill: $white;
+          }
+        }
+      }
+      &-prev{
+        border-right: 1px solid rgba(0,0,0,.2);
+      }
+      &-next{
+        border-left: 1px solid rgba(0,0,0,.2);
+      }
+    }
+    &-counter{
+      font-weight: 700;
+      font-size: 24px;
+      line-height: 26px;
+      letter-spacing: 0px;
+      text-transform: uppercase;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 100%;
+      max-width: 49.3%;
+    }
+    &-slide{
+      transition: all 0.5s ease;
+      padding: 80px 0;
+      height: 264px;
+      background-size: cover;
+      img{
+        width: 100%;
+      }
+      &-active {
+        transform: scale(2.2, 2.15) !important;
+      }
+
+    }
+    @media(max-width: $l){
+      &-controls{
+        margin-top: 0;
+      }
+      &-slide{
+        height: 364px;
+        &-active{
+          transform: scale(1) !important;
+        }
+      }
+    }
+    @media(max-width: $m){
+      &-btn{
+        max-width: 50%;
+        gap: 10px;
+      }
+    }
+  }
+
+}
+
+

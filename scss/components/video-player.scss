@@ -1,0 +1,42 @@
+.video-player{
+  display: flex;
+  align-items: center;
+  gap: 11px;
+  &__link{
+    font-weight: 700;
+    font-size: 50px;
+    line-height: 52px;
+    letter-spacing: -5px;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    cursor: pointer;
+    svg{
+      transition: .3s all;
+    }
+    span{
+      opacity: .2;
+    }
+    &:hover{
+      svg{
+        scale: 1.1;
+      }
+    }
+  }
+  &__duration{
+    font-size: 18px;
+    line-height: 22px;
+    letter-spacing: 0px;
+    opacity: .3;
+  }
+  @media(max-width: $m){
+    &__link{
+      font-size: 40px;
+      line-height: 42px;
+    }
+  }
+  @media(max-width: $s){
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
